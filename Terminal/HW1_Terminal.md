@@ -82,7 +82,8 @@ http://162.55.220.72:5005/terminal-hw-request
  
 Ответ :
 
-``` {
+``` 
+{
   "Intro": "Hello!! This is your the first response from server", 
   "Tasks": {
     "Task_1": "Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)", 
@@ -100,7 +101,8 @@ http://162.55.220.72:5005/terminal-hw-request
 
 Ответ :
 
-``` [
+``` 
+[
   "Alex", 
   "34"
 ]
