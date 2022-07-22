@@ -236,3 +236,74 @@ var randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
 var randomTesult = ["У тебя", randomBodyPart, "словно", randomAdjective, randomWord + " !!!"].join(" ");
 
 console.log(randomTesult);
+
+// Сделайте генератор случайных дразнилок со своим набором слов.
+// Предсказание погоды ;)
+
+var times = [
+    "Сегодня утром",
+    "Cегодня днем",
+    "Сегодня вечером",
+    "Сегодня ночью"
+];
+
+var weather = [
+    "дождь",
+    "пасмурно",
+    "солнечно",
+    "легкий ветерок",
+    "снег",
+    "град",
+    "жара"
+];
+
+var clothes = [
+    "возьми зонт",
+    "надень пуховик",
+    "не забудь очки",
+    "нанеси крем от загара",
+    "надень шорты и сланцы"
+];
+
+var timesOne = times[Math.floor(Math.random() * times.length)];
+var weatherOne = weather[Math.floor(Math.random() * weather.length)];
+var clothesOne = clothes[Math.floor(Math.random() * clothes.length)];
+
+var randomResult = [timesOne, weatherOne, clothesOne + " !!!"].join(" ");
+
+console.log(randomResult);
+
+// Изощренные дразнилки. Усовершенствуйте генератор дразнилок, 
+// чтобы он создавал дразнилки такого типа: «У тебя [часть тела] 
+// еще более [прилагательное], чем [часть тела животного] у [животное]».
+
+// var randomBodyParts = ["глаз", "нос", "череп", "лицо", "лоб"];
+// var randomAdjectives = ["вонючая", "унылая", "дурацкая"];
+// var randomWords = ["муха", "выдра", "дубина", "мартышка", "крыса"];
+
+// randomWords.push("черепашка");
+// randomWords.push("ламинария");
+
+randomAdjectives.push("склизкая");
+randomAdjectives.push("шершавая");
+randomAdjectives.push("разноцветная")
+
+var partOfBodys = [
+    "уши",
+    "щупальца",
+    "шея",
+    "плавники",
+    "перепонка",
+    "хобот",
+    "лапы",
+    "сумка"
+];
+
+// var randomBodyPart = randomBodyParts[Math.floor(Math.random() * randomBodyParts.length)];
+// var randomAdjective = randomAdjectives[Math.floor(Math.random() * randomAdjectives.length)];
+// var randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
+var partOfBody = partOfBodys[Math.floor(Math.random() * partOfBodys.length)];
+
+var ramdomResultWithPart = ["У тебя", partOfBody, "еще более", randomAdjective, "чем", randomBodyPart, "у", randomWord].join(" ");
+
+console.log(ramdomResultWithPart);
