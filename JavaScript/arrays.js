@@ -27,7 +27,6 @@ console.log(dinosaurs[0]);
 dinosaurs[33] = "Филосораптор";
 dinosaurs[9] = 9;
 
-
 console.log(dinosaurs);
 
 var dinosaursAndNum = [
@@ -158,3 +157,82 @@ var myNames = [
 ];
 
 console.log(myNames.join(" "));
+
+// Поиск дороги домой
+
+var landmarks = [];
+
+landmarks.push ("Мой дом");
+landmarks.push("Дорожка к дому");
+landmarks.push("Мигающий фонарь");
+landmarks.push("Протекающий гидрант");
+landmarks.push("Пожарная станция");
+landmarks.push("Приют для кошек");
+landmarks.push("Моя бывшая школа");
+landmarks.push("Дом подруги");
+
+console.log(landmarks.pop());
+console.log(landmarks.pop());
+console.log(landmarks.pop());
+console.log(landmarks.pop());
+console.log(landmarks.pop());
+console.log(landmarks.pop());
+console.log(landmarks.pop());
+console.log(landmarks.pop());
+
+console.log(landmarks);
+
+// Случайный выбор Math.random()
+
+console.log(Math.random());
+
+// Округление Math.floor()
+
+console.log(Math.floor(4.1873));
+
+console.log(Math.floor(Math.random() * 4)); // 4 кол-во элементов в массиве
+
+var randomWords = [
+    "Взрыв", 
+    "Пещера", 
+    "Принцесса", 
+    "Карандаш"
+];
+
+//var randomIndex = Math.floor(Math.random() * 4);
+//console.log(randomWords[Math.floor(Math.random() * 4)]);
+
+console.log(randomWords[Math.floor(Math.random() * 4)]);
+
+//Программа случайного выбора вариантов
+
+var phrases = [
+    "Звучит не плохо",
+    "Да, это определенно надо сделать",
+    "Не думаю, что это хорошая идея",
+    "Может, не сегодня?",
+    "Компьютер говорит нет"
+];
+
+// Мне выпить еще молочного коктеля?
+
+console.log(phrases[Math.floor(Math.random() * 5)]);
+
+// Генератор случайных дразнилок
+
+var randomBodyParts = ["глаз", "нос", "череп", "лицо", "лоб"];
+var randomAdjectives = ["вонючая", "унылая", "дурацкая"];
+var randomWords = ["муха", "выдра", "дубина", "мартышка", "крыса"];
+
+randomWords.push("черепашка");
+randomWords.push("ламинария");
+
+var randomBodyPart = randomBodyParts[Math.floor(Math.random() * randomBodyParts.length)];
+var randomAdjective = randomAdjectives[Math.floor(Math.random() * randomAdjectives.length)];
+var randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
+
+//console.log("У тебя " + randomBodyPart + " словно " + randomAdjective + " " + randomWord + " !!!");
+
+var randomTesult = ["У тебя", randomBodyPart, "словно", randomAdjective, randomWord + " !!!"].join(" ");
+
+console.log(randomTesult);
