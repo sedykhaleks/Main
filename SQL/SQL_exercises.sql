@@ -103,3 +103,38 @@ SELECT ships.class, name, country
 FROM classes
 JOIN ships ON ships.class = classes.class
 WHERE numGuns >= 10
+
+/* 15) Найдите размеры жестких дисков, совпадающих у двух и более PC. Вывести: HD */
+
+SELECT hd
+FROM pc
+GROUP BY hd
+HAVING COUNT(hd) >= 2
+
+/* 16) Найдите пары моделей PC, имеющих одинаковые скорость и RAM. 
+В результате каждая пара указывается только один раз, т.е. (i,j), но не (j,i), 
+Порядок вывода: модель с большим номером, модель с меньшим номером, скорость и RAM. */
+
+SELECT DISTINCT pc.model, pc2.model, pc.speed, pc.ram
+FROM pc, (SELECT model, speed, ram
+FROM pc) as pc2
+WHERE pc.speed = pc2.speed AND pc.ram = pc2.ram AND pc.model > pc2.model
+
+/* 17) Найдите модели ПК-блокнотов, скорость которых меньше скорости каждого из ПК. 
+Вывести: type, model, speed  */
+
+SELECT  DISTINCT product.type, laptop.model, laptop.speed 
+FROM Laptop, Product
+WHERE (laptop.speed < ALL(SELECT speed FROM PC )) AND product.type ='laptop'
+
+SELECT DISTINCT product.type, laptop.model, laptop.speed
+FROM product
+JOIN laptop ON laptop.model = product.model
+WHERE laptop.speed < ALL(SELECT speed FROM pc)
+
+/* 18) Найдите производителей самых дешевых цветных принтеров. Вывести: maker, price */
+
+SELECT DISTINCT product.maker, printer.price
+FROM product
+LEFT JOIN printer ON printer.model = product.model
+WHERE color = 'Y' AND price = (SELECT MIN(price) FROM printer WHERE color = 'Y')
