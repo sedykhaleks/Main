@@ -71,3 +71,5 @@ print(item_13 + ', ' + str(item_14))
 #13) Вывести в одну строку переменные типа String и Integer используя “+” (Плюс)
 
 print(item_13 + ' + ' + str(item_14))
+
+
