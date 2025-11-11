@@ -1,0 +1,68 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+
+public class Main extends JFrame {
+
+	public static void main(String[] args) {
+		
+		Main frame = new Main();
+		
+		//set a new flow layout and dimensions and title
+		frame.setLayout(new FlowLayout());
+		frame.setSize(new Dimension(500, 500));
+		frame.setTitle("The Twilight Zone");
+
+		//ensures that X button works
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+		//create a panel for all the stuff and add it to the panel
+		JPanel panel = new JPanel();
+
+		//add a label
+		JLabel motto = new JLabel("Not only of sight... but of MIND");
+		JLabel lblUserName = new JLabel("Enter User Name");
+    JTextField txtUserName = new JTextField();
+		JTextField txtUserName1 = new JTextField();
+		JButton but = new JButton("Submit");
+		JLabel msg = new JLabel();
+
+		//add elements to the panel
+		panel.add(motto);
+		panel.add(lblUserName);
+		panel.add(txtUserName1);
+		panel.add(but);
+		panel.add(msg);
+
+		//add a button
+		but.setBounds(50, 150, 100, 30);
+		
+		//add an action listener to the button
+		but.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String inputText = motto.getText();
+				}
+			});
+		
+		//add the action listener to the button
+		motto.setToolTipText("Complete the Twilight Zone Motto!");
+		but.setToolTipText("Click to Submit");
+
+		//add the action listener here and display user name
+		but.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+		String userName = txtUserName1.getText();
+		msg.setText("User Name = " + userName);}}
+		);
+
+		//add vertical layout
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+		//add a panel to the frame
+		frame.getContentPane().add(panel);
+		//frame.setLocation(null);
+		
+		//make it visible on the screen
+		frame.setVisible(true);
+	}
+}
